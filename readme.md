@@ -198,8 +198,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // Even better:
 
-    var i,
-      length = 100;
+    var i;
+    var length = 100;
 
     for (i = 0; i < length; i++) {
       // statements
@@ -207,8 +207,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // Or...
 
-    var i = 0,
-      length = 100;
+    var i = 0;
+    var length = 100;
 
     for ( ; i < length; i++) {
       // statements
@@ -235,34 +235,28 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // 2.B.1.1
     // Variables
-    var foo = 'bar',
-      num = 1,
-      undef;
+    var foo = 'bar';
+    var num = 1;
+    var undef;
 
     // Literal notations:
-    var array = [],
-      object = {};
+    var array = [];
+    var object = {};
 
 
     // 2.B.1.2
-    // Using only one `var` per scope (function) promotes readability
-    // and keeps your declaration list free of clutter (also saves a few keystrokes)
+    // Using one `var` per variable
 
     // Bad
-    var foo = '';
-    var bar = '';
-    var qux;
-
-    // Good
     var foo = '',
       bar = '',
       qux;
 
-    // or..
-    var // Comment on these
-    foo = '',
-    bar = '',
-    quux;
+    // Good
+    var foo = '';
+    var bar = '';
+    var qux;
+
 
     // 2.B.1.3
     // var statements should always be in the beginning of their respective scope (function).
@@ -273,14 +267,14 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
       // some statements here
 
-      var bar = '',
-        qux;
+      var bar = '';
+      var qux;
     }
 
     // Good
     function foo() {
-      var bar = '',
-        qux;
+      var bar = '';
+      var qux;
 
       // all statements after the variables declarations.
     }
@@ -290,8 +284,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // Bad
     function foo() {
-      let foo,
-        bar;
+      let foo;
+      let bar;
       if (condition) {
         bar = '';
         // statements
@@ -561,9 +555,9 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // 3.B.2.1
 
-    var number = 1,
-      string = '1',
-      bool = false;
+    var number = 1;
+    var string = '1';
+    var bool = false;
 
     number;
     // 1
@@ -597,9 +591,9 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     ```javascript
     // 3.B.2.2
 
-    var number = 1,
-      string = '1',
-      bool = true;
+    var number = 1;
+    var string = '1';
+    var bool = true;
 
     string === number;
     // false
@@ -918,10 +912,10 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
       return document.querySelectorAll(selector);
     }
 
-    var idx = 0,
-      elements = [],
-      matches = query('#foo'),
-      length = matches.length;
+    var idx = 0;
+    var elements = [];
+    var matches = query('#foo');
+    var length = matches.length;
 
     for ( ; idx < length; idx++) {
       elements.push(matches[idx] );
@@ -1163,7 +1157,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // A alternate approach that supports composability and reusability is to
     // use an object to store "cases" and a function to delegate:
 
-    var cases, delegator;
+    var cases;
+    var delegator;
 
     // Example returns for illustration only.
     cases = {
@@ -1185,7 +1180,9 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     };
 
     delegator = function() {
-      var args, key, delegate;
+      var args;
+      var key;
+      var delegate;
 
       // Transform arguments list into an array
       args = [].slice.call(arguments);
@@ -1215,7 +1212,8 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // Of course, the `case` key argument could easily be based
     // on some other arbitrary condition.
 
-    var caseKey, someUserInput;
+    var caseKey;
+    var someUserInput;
 
     // Possibly some kind of form input?
     someUserInput = 9;
